@@ -1,0 +1,119 @@
+1. Purpose 
+This document explains how your React applica on will be evaluated and the mandatory requirements you 
+must follow during the assessment. 
+2. Application Deployment (Vercel) 
+• Your applica on must be deployed using Vercel 
+• Submit: 
+◦ Vercel URL (mandatory) 
+◦ GitHub repository (op onal) 
+Important Rules 
+• Applica on must be publicly accessible 
+• All routes must work correctly on the deployed URL 
+• Localhost URLs will not be accepted 
+3. Routes (Provided in Question Paper) 
+The required routes will be explicitly men oned in the ques on paper. 
+Example: 
+/orders   
+/orders/:id   
+/filter   
+/stats   
+Important 
+• You must implement exactly the same routes 
+• Routes are case-sensi ve 
+• Do not modify route paths 
+4. Test IDs (Provided in Question Paper) 
+The required data-tes d values will be specified in the ques on paper. 
+Example: 
+<div data-testid="total-orders"></div> 
+<div data-testid="delivered-orders"></div> 
+<div data-testid="cancelled-orders"></div> 
+<div data-testid="order-item"></div> 
+ of 
+1 4
+Prepared By Dineshkumar
+PCP V CA2
+Important Rules 
+• You must use the exact test IDs as given 
+• Do not rename, modify, or remove them 
+Warning 
+If data-tes d values do not match exactly, your applica on may fail evalua on even if the logic is correct. 
+5. Stats Component Requirement (Mandatory) 
+All evalua on-related outputs must be implemented inside the /stats route component only. 
+This includes: 
+• All required data-tes d elements 
+• window.appState 
+Example: 
+<div data-testid="total-orders">30</div> 
+<div data-testid="delivered-orders">18</div> 
+<div data-testid="cancelled-orders">6</div> 
+window.appState = { 
+  totalOrders, 
+  deliveredOrders, 
+  cancelledOrders 
+}; 
+Important Rules 
+• Must be implemented only in the /stats page 
+• Must update dynamically based on data 
+• Do not hardcode values 
+• Do not place these in other components 
+6. Global State Exposure (Mandatory) 
+You must expose computed values using: 
+window.appState = { 
+  totalOrders, 
+  deliveredOrders, 
+  cancelledOrders 
+}; 
+Note 
+• This requirement will be men oned in the ques on paper 
+• Values must be computed dynamically 
+• Hardcoded values will not be accepted 
+ of 
+2 4
+Prepared By Dineshkumar
+PCP V CA2
+7. Evaluation Flow 
+Your applica on will be evaluated automa cally using the following process: 
+Step 1: Load your deployed application   
+Step 2: Navigate to required routes   
+Step 3: Access the /stats page   
+Step 4: Read UI using data-testid   
+Step 5: Read window.appState   
+Step 6: Validate outputs   
+8. What the Evaluator Checks 
+Data Rendering 
+• Correct number of items (*-item) 
+Computed Values 
+• Total values 
+• Derived counts 
+Func onality 
+• Filtering 
+• Status updates 
+• Data consistency 
+9. Common Mistakes to Avoid 
+• Incorrect route paths 
+• Wrong data-tes d values 
+• Missing window.appState 
+• Hardcoding values 
+• Not handling invalid data 
+• Using sta c/local data instead of API 
+• Placing stats logic outside /stats page 
+10. Development Rules 
+• Use Context as single source of truth 
+• Use Reducer for all updates 
+• Use map, filter, reduce for logic 
+• Do not store derived values in state 
+ of 
+3 4
+Prepared By Dineshkumar
+PCP V CA2
+11. Final Checklist Before Submission 
+• Vercel link is working 
+• Routes match ques on paper exactly 
+• Test IDs match ques on paper exactly 
+• /stats page contains all required outputs 
+• window.appState is available and correct 
+• All values are computed dynamically 
+• No console errors 
+Final Note 
+Routes and test IDs will be provided in the ques on paper. All evalua on-related outputs must be 
+implemented in the /stats component. You must follow these instruc ons exactly for successful evalua on. 

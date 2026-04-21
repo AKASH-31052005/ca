@@ -1,0 +1,209 @@
+1. Objective 
+This assessment evaluates your understanding of: 
+• React fundamentals (components, props, state) 
+• React Router (naviga on, params) 
+• Context API (global state management) 
+• useReducer (complex state handling) 
+• API consump on using Axios / fetch 
+• Component-based architecture 
+• Data rendering and transforma on (map, filter, reduce) 
+• Form handling and valida on 
+• Clean UI structuring 
+2. Assessment Overview 
+You will be provided with: 
+• A Public API → to get a token 
+• A Private API → to fetch dataset 
+Your task is to: 
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+Fetch a token using your student creden als 
+Use the token to fetch dataset 
+Store dataset in global state (Context + Reducer) 
+Build a React applica on with required features 
+Implement rou ng using React Router 
+Deploy your applica on (Vercel / Netlify) 
+Submit GitHub + Live URL 
+3. Step 1 – Obtain Token (Public API) 
+Endpoint 
+POST /public/token 
+Request Body 
+{ 
+} 
+  "studentId": "YOUR_REGISTER_NUMBER", 
+  "password": "YOUR_PASSWORD" 
+Password will be shared via email. 
+ of 
+1 5
+Prepared By Dineshkumar
+React Assessment 
+Response 
+{ 
+} 
+  "token": "JWT_TOKEN" 
+Rules 
+• Must use POST request 
+• Must use Axios / fetch 
+• Token validity is limited 
+4. Step 2 – Fetch Dataset (Private API) 
+Endpoint 
+GET /private/data 
+Header 
+Authorization: Bearer <JWT_TOKEN> 
+Behavior 
+• Valid token → dataset returned 
+• Invalid/expired token → 401 
+5. Implementation Rules (STRICT) 
+Mandatory 
+1.
+2.
+3.
+4.
+Fetch data only once (on app load) 
+Store data using Context + Reducer 
+Use global state across all components 
+Use React Router for naviga on 
+Not Allowed 
+• Fetching API inside mul ple components 
+• Using only local state instead of global state 
+• Hardcoding dataset 
+• Skipping Context or Reducer 
+• Sharing creden als 
+ of 
+2 5
+Prepared By Dineshkumar
+React Assessment 
+6. Required Application Structure 
+src/ 
+├── components/ 
+├── pages/ 
+├── context/ 
+│     
+├── AppContext.jsx 
+├── reducer/ 
+│     
+├── AppReducer.js 
+├── router/ 
+│     
+├── AppRouter.jsx 
+├── services/ 
+│     
+├── api.js 
+├── App.jsx 
+7. Features to Implement 
+(Based on Movie Wishlist App Model) 
+Q1 – Add Movie (Form with Validation) 
+Requirements: 
+• Form using useState 
+• Validate: 
+◦ Movie name → le ers only 
+◦ Year → 4 digits 
+• Add movie to global state (Context + Reducer) 
+• Prevent invalid submission 
+Q2 – Movie List (CRUD Operations) 
+Requirements: 
+• Display all movies using .map() 
+• Add new movie (Create) 
+• Delete movie (Delete) 
+• Toggle watched status 
+• Use reusable MovieCard component 
+Q3 – Favorites (Context + Routing) 
+Route: 
+/favorites 
+Requirements: 
+• Add/remove favorites 
+• Store in global state 
+• Display favorite movies 
+ of 
+3 5
+Prepared By Dineshkumar
+React Assessment 
+Q4 – Navigation (React Router) 
+Routes: 
+/ → Home 
+/favorites → Favorites 
+/stats → Stats 
+Requirements: 
+• Proper rou ng setup 
+• Naviga on between pages 
+• Ac ve route handling 
+Q5 – Stats Dashboard (Analysis) 
+Route: 
+/stats 
+Requirements: 
+Use .filter() and .reduce() to compute: 
+• Total movies 
+• Watched movies 
+• Movies grouped by genre 
+Must be dynamically calculated 
+8. Technical Requirements 
+Your project must include: 
+• Func onal Components 
+• useState 
+• useEffect 
+• useContext 
+• useReducer 
+• React Router 
+• Axios / fetch 
+• Form valida on 
+• Clean folder structure 
+9. Deployment Requirements 
+You must: 
+1. Deploy using: 
+◦ Vercel / Netlify 
+2. Ensure: 
+◦ App runs without errors 
+ of 
+4 5
+Prepared By Dineshkumar
+React Assessment 
+◦ Rou ng works correctly 
+◦ No console errors 
+3. Submit: 
+◦ GitHub repository 
+◦ Live deployed URL 
+10. Evaluation Criteria (100 Marks) 
+Criteria
+API Integra on (token + data)
+Marks
+15
+Context + Reducer Implementa on
+Rou ng (React Router)
+20
+15
+Feature Implementa on (Movie 
+App)
+State Management Logic
+25
+10
+Code Structure & Cleanliness
+Deployment
+10
+5
+11. Academic Integrity 
+• Each student gets unique creden als 
+• Token expires a er limited me 
+• Sharing creden als → malprac ce 
+• Hardcoding data → disqualifica on 
+12. Key Learning Mapping 
+Concept
+useEffect
+Usage
+API fetch
+Context
+Reducer
+Global state
+State updates
+Router
+map/filter/
+reduce
+Naviga on
+Logic
+Props
+ of 
+Component 
+reuse
